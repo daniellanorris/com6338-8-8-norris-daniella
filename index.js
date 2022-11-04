@@ -92,13 +92,6 @@ function renderData(data) {
     dateParagraph.textContent = 'Last Updated:  ' + timeString
     div.appendChild(dateParagraph)
 
-<<<<<<< HEAD
-=======
-
-
-}
-
->>>>>>> 1d1234e828949430b9ac1341c0ffe03deb1459a1
 
 
 }
