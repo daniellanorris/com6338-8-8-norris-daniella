@@ -12,7 +12,7 @@ form.onsubmit = function (e) {
 
     e.preventDefault()
     weatherSection.prepend(div)
-    var URL = "http://api.openweathermap.org/data/2.5/weather?q="
+    var URL = "https://api.openweathermap.org/data/2.5/weather?q="
     var city = this.search.value.trim()
     var fullURL = URL + city + "&appid=" + APIkey;
     if ((!city) || (weatherSearch.value = '')) {
