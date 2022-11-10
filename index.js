@@ -14,7 +14,7 @@ form.onsubmit = function (e) {
     weatherSection.prepend(div)
     var URL = "https://api.openweathermap.org/data/2.5/weather?q="
     var city = this.search.value.trim()
-    var fullURL = URL + city + "&appid=" + APIkey;
+    var fullURL = URL + city + "&units=imperial&appid=" + APIkey ;
     if ((!city) || (weatherSearch.value = '')) {
         city = ''
         div.innerHTML = ''
@@ -72,13 +72,13 @@ function renderData(data) {
 
     //CURRENT TEMP
     var temp = document.createElement('p')
-    tempNumber = ((data.main.temp - 273.15) * 9 / 5 + 32).toFixed(2)
+    tempNumber = data.main.temp
     temp.textContent = "Current:  " + tempNumber + '° F'
     div.appendChild(temp)
 
     //CURRENT 'FEELS LIKE'
     var feelsLike = document.createElement('p')
-    feelsLikeNumber = ((data.main.feels_like - 273.15) * 9 / 5 + 32).toFixed(2)
+    feelsLikeNumber = data.main.feels_like
     feelsLike.textContent = "Feels like:  " + feelsLikeNumber + '° F'
     div.appendChild(feelsLike)
 
@@ -95,5 +95,3 @@ function renderData(data) {
 
 
 }
-
-
